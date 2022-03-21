@@ -10,7 +10,7 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
                 style={{
                     fontFamily: FONTS.semiBold,
                     fontSize: titleSize,
-                    color: COLORS.primary,
+                    color: COLORS.fontLight,
                 }}
             >
                 {title}
@@ -19,7 +19,7 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
                 style={{
                     fontFamily: FONTS.regular,
                     fontSize: subTitleSize,
-                    color: COLORS.primary,
+                    color: COLORS.fontLight,
                 }}
             >
                 by {subTitle}
@@ -31,19 +31,14 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
 export const EthPrice = ({ price }) => {
     return (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Image
-                source={assets.eth}
-                resizeMode="contain"
-                style={{ width: 20, height: 20, marginRight: 2 }}
-            />
             <Text
                 style={{
                     fontFamily: FONTS.medium,
                     fontSize: SIZES.font,
-                    color: COLORS.primary,
+                    color: COLORS.fontLight,
                 }}
             >
-                {price}
+                {price} ETH
             </Text>
         </View>
     )
@@ -79,43 +74,6 @@ export const People = () => {
     )
 }
 
-export const EndDate = () => {
-    return (
-        <View
-            style={{
-                paddingHorizontal: SIZES.font,
-                paddingVertical: SIZES.base,
-                backgroundColor: COLORS.white,
-                borderRadius: SIZES.font,
-                justifyContent: 'center',
-                alignItems: 'center',
-                ...SHADOWS.light,
-                elevation: 1,
-                maxWidth: '50%',
-            }}
-        >
-            <Text
-                style={{
-                    fontFamily: FONTS.regular,
-                    fontSize: SIZES.small,
-                    color: COLORS.primary,
-                }}
-            >
-                Ending in
-            </Text>
-            <Text
-                style={{
-                    fontFamily: FONTS.semiBold,
-                    fontSize: SIZES.medium,
-                    color: COLORS.primary,
-                }}
-            >
-                12h 30m
-            </Text>
-        </View>
-    )
-}
-
 export const SubInfo = () => {
     return (
         <View
@@ -128,7 +86,6 @@ export const SubInfo = () => {
             }}
         >
             <People />
-            <EndDate />
         </View>
     )
 }
