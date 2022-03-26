@@ -25,19 +25,6 @@ const DetailsHeader = ({ data, navigation }) => (
             resizeMode="cover"
             style={{ width: '100%', height: '100%' }}
         />
-
-        <CircleButton
-            imgUrl={assets.left}
-            handlePress={() => navigation.goBack()}
-            left={15}
-            top={StatusBar.currentHeight + 10}
-        />
-
-        <CircleButton
-            imgUrl={assets.heart}
-            right={15}
-            top={StatusBar.currentHeight + 10}
-        />
     </View>
 )
 
@@ -47,29 +34,10 @@ const Details = ({ route, navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <FocusedStatusBar
-                barStyle="dark-content"
+                barStyle="white-content"
                 backgroundColor="transparent"
                 translucent={true}
             />
-
-            <View
-                style={{
-                    width: '100%',
-                    position: 'absolute',
-                    bottom: 0,
-                    paddingVertical: SIZES.font,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: 'rgba(255,255,255,0.5)',
-                    zIndex: 1,
-                }}
-            >
-                <RectButton
-                    minWidth={170}
-                    fontSize={SIZES.large}
-                    {...SHADOWS.dark}
-                />
-            </View>
 
             <FlatList
                 data={data.bids}
@@ -80,10 +48,19 @@ const Details = ({ route, navigation }) => {
                     paddingBottom: SIZES.extraLarge * 3,
                 }}
                 ListHeaderComponent={() => (
-                    <React.Fragment>
+                    <View
+                        style={{
+                            backgroundColor: COLORS.light,
+                        }}
+                    >
                         <DetailsHeader data={data} navigation={navigation} />
                         <SubInfo />
-                        <View style={{ padding: SIZES.font }}>
+                        <View
+                            style={{
+                                padding: SIZES.font,
+                                backgroundColor: COLORS.light,
+                            }}
+                        >
                             <DetailsDesc data={data} />
 
                             {data.bids.length > 0 && (
@@ -91,16 +68,34 @@ const Details = ({ route, navigation }) => {
                                     style={{
                                         fontSize: SIZES.font,
                                         fontFamily: FONTS.semiBold,
-                                        color: COLORS.primary,
+                                        color: COLORS.fontLight,
                                     }}
                                 >
                                     Current Bid
                                 </Text>
                             )}
                         </View>
-                    </React.Fragment>
+                    </View>
                 )}
             />
+
+            <View
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: -1,
+                }}
+            >
+                <View
+                    style={{
+                        height: '100%',
+                        backgroundColor: COLORS.light,
+                    }}
+                />
+            </View>
         </SafeAreaView>
     )
 }

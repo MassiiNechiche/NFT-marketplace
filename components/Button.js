@@ -7,12 +7,11 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
             style={{
                 width: 40,
                 height: 40,
-                backgroundColor: COLORS.light,
+                backgroundColor: COLORS.primary,
                 position: 'absolute',
                 borderRadius: SIZES.extraLarge,
                 alignItems: 'center',
                 justifyContent: 'center',
-                ...SHADOWS.light,
                 ...props,
             }}
             onPress={handlePress}

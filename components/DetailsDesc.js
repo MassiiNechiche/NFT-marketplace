@@ -33,7 +33,7 @@ const DetailsDesc = ({ data }) => {
                     style={{
                         fontSize: SIZES.font,
                         fontFamily: FONTS.semiBold,
-                        color: COLORS.primary,
+                        color: COLORS.fontLight,
                     }}
                 >
                     Description
@@ -45,7 +45,7 @@ const DetailsDesc = ({ data }) => {
                 >
                     <Text
                         style={{
-                            color: COLORS.secondary,
+                            color: COLORS.fontLight,
                             fontSize: SIZES.small,
                             fontFamily: FONTS.regular,
                             lineHeight: SIZES.large,
@@ -55,7 +55,7 @@ const DetailsDesc = ({ data }) => {
                         {!readMore && '...'}
                         <Text
                             style={{
-                                color: COLORS.primary,
+                                color: COLORS.fontLight,
                                 fontSize: SIZES.small,
                                 fontFamily: FONTS.semiBold,
                             }}
